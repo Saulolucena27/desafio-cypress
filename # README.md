@@ -1,0 +1,108 @@
+# README
+
+## Treinamento Cypress - CRUD WebTables
+
+Este projeto automatiza cenários de testes (positivos e negativos) para o CRUD de usuários na página [DemoQA WebTables](https://demoqa.com/webtables), utilizando Cypress com Cucumber (Gherkin) e geração de dados dinâmicos com Faker.
+
+## Estrutura do Projeto
+
+```
+.
+├── cypress.config.js
+├── cypress.env.json
+├── package.json
+├── cypress/
+│   ├── e2e/
+│   │   ├── cenarios-negativos.feature
+│   │   └── cenarios-positivos.feature
+│   ├── screenshots/
+│   ├── support/
+│   │   ├── commands.js
+│   │   ├── e2e.js
+│   │   └── pages/
+│   │       ├── webTables.page.js
+│   │       ├── editWebTables.page.js
+│   │       └── deleteWebTables.page.js
+│   │   └── step-definitions/
+│   │       ├── Steps-Positivos/
+│   │       └── Steps-Negativos/
+│   └── videos/
+└── .gitignore
+```
+
+## Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm
+
+## Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone <url-do-repositorio>
+   cd <nome-da-pasta>
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+## Configuração
+
+As variáveis de ambiente estão no arquivo `cypress.env.json`:
+
+```json
+{
+  "BASE_URL": "https://demoqa.com/webtables",
+}
+```
+
+## Como Executar
+
+### Modo interativo (interface gráfica)
+```bash
+npx cypress open
+```
+
+### Modo headless (terminal)
+```bash
+npx cypress run
+```
+
+### Executar cenários específicos
+```bash
+npx cypress run --spec "cypress/e2e/cenarios-positivos.feature"
+npx cypress run --spec "cypress/e2e/cenarios-negativos.feature"
+```
+
+## Funcionalidades Testadas
+
+### Cenários Positivos
+- Criar usuário com dados válidos
+- Editar registro existente
+- Excluir registro da tabela
+
+### Cenários Negativos
+- Validação de campos obrigatórios
+- Teste de limites de caracteres (300)
+- Validação de formato de email
+- Teste de segurança contra SQL Injection
+
+## Tecnologias
+
+- Cypress
+- Cucumber (BDD)
+- Faker.js (geração de dados)
+- JavaScript
+
+## Evidências
+
+Os testes geram automaticamente:
+- Screenshots em `cypress/screenshots/`
+- Vídeos em `cypress/videos/`
+
+## Autor
+
+Saulo de Lucena
+saulolucena12@gmail.com
